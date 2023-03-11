@@ -6,28 +6,40 @@ const fs = require('fs');
 // Crear servidor express
 const app = express();
 
+// Permitir archivos estaticos
+app.use(express.static('public'))
+
 // Configurar el servidor para usar el motor hbs
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
-app.get('/puntajes', (req, res) => {
-    // // Obtener datos del archivo JSON
-    // fs.readFile('carrera.json', (err, data) => {
-    //     let dataParsed = JSON.parse(data);
-    //     console.log(dataParsed);
-    //     res.render('resultados', { dataCard: dataParsed.carrera});
-    // });
+// Almacenar datos de archivos JSON
+const archivos = ['carrera.json', 'equipos.json'];
 
-    // Obtener datos del archivo JSON
-    fs.readFile('carrera.json', (err, data) => {
-        let dataParsed = JSON.parse(data);
-        console.log(dataParsed);
-        res.render('puntajes', { dataCarrera: dataParsed.carrera});
-    });
-     
+const data = {};
+
+// Recorrer array archivos
+archivos.forEach(archivo => {
+  const rawData = fs.readFileSync(archivo);
+  const jsonData = JSON.parse(rawData);
+  data[archivo] = jsonData;
+  console.log(data[archivo])
+});
+
+app.get('/resultados', (req, res) => {
+    res.render('resultados', { dataEquipos: data['equipos.json'].equipos });
+});
+
+app.get('/puntajes', (req, res) => {
+    res.render('puntajes', { dataCarrera: data['carrera.json'].carrera});
 });
 
 // Hacer que la app escuche el puerto 3000
 app.listen('3000', () => {
     console.log('Servicio levantado')
 })
+
+// Insertar mas archivos JSON dentro de una pagina
+    // const data1 = require('./data1.json');
+    // const data2 = require('./data2.json');
+    // res.render('template', { data1, data2 });
