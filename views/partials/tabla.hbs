@@ -8,12 +8,66 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Mark</td>
-        <th scope="row">5</th>
-        </tr>
-    </tbody>
-    </table>
+    <tr>
+      <th scope="row">Lugar</th>
+      <th>Piloto</th>
+      <th>Puntaje</th>
+      </tr>
+      <th scope="row">1</th>
+      <td>Max Verstappen</td>
+      <td>25</td>
+      </tr>
+      <tr>
+      <th scope="row">2</th>
+      <td>Sergio Perez</td>
+      <td>18</td>
+      <tr>
+      <th scope="row">3</th>
+      <td>Fernando Alonso</td>
+      <td>15</td>
+      <tr>
 
+        {{#each dataResultados}}
+            <th scope="row">"{{this.lugar}}"</th>
+            <td>"{{this.piloto}}"</td>
+            <td>"{{this.puntaje}}"</td>
+            {{/each}}
+
+      <th scope="row">4</th>
+      <td colspan="2">Carlos Sainz</td>
+      <td>12</td>
+      <tr>
+      <th scope="row">5</th>
+      <td colspan="2">Lewis Hamilton</td>
+      <td>10</td>
+      <tr>
+      <th scope="row">6</th>
+      <td colspan="2">Lance Stroll</td>
+      <td>8</td>
+      <tr>
+      <th scope="row">7</th>
+      <td colspan="2">George Russel</td>
+      <td>6</td>
+      <tr>
+      <th scope="row">8</th>
+      <td colspan="2">Valtteri Bottas</td>
+      <td>4</td>
+      <tr>
+      <th scope="row">9</th>
+      <td colspan="2">Pierre Gasly</td>
+      <td>2</td>
+      <tr>
+      <th scope="row">10</th>
+      <td colspan="2">Alenxander Albon</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        
+        
+
+
+
+
+
+        
