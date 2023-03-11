@@ -1,16 +1,19 @@
-{{#each dataCarrera}}
+
 <table class="table">
     <thead>
         <tr>
-        <th scope="col"><img src="{{this.bandera}}" class="rounded mx-auto d-block" alt="..."></th>
-        <th scope="col">Handle</th>
+            {{#each dataCarrera}}
+            <th scope="col"><img src="{{this.bandera}}" class="rounded mx-auto d-block" style="width: 2rem;"></th>
+            {{/each}}
         </tr>
     </thead>
     <tbody>
         <tr>
         <th scope="row">1</th>
         <td>Mark</td>
+        <td>Mark</td>
+        <th scope="row">5</th>
         </tr>
     </tbody>
     </table>
-{{/each}}
+
