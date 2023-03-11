@@ -10,13 +10,13 @@ const app = express();
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
-app.get('/resultados', (req, res) => {
-    // Obtener datos del archivo JSON
-    fs.readFile('carrera.json', (err, data) => {
-        let dataParsed = JSON.parse(data);
-        console.log(dataParsed);
-        res.render('resultados', { dataCard: dataParsed.carrera});
-    });
+app.get('/puntajes', (req, res) => {
+    // // Obtener datos del archivo JSON
+    // fs.readFile('carrera.json', (err, data) => {
+    //     let dataParsed = JSON.parse(data);
+    //     console.log(dataParsed);
+    //     res.render('resultados', { dataCard: dataParsed.carrera});
+    // });
 
     // Obtener datos del archivo JSON
     fs.readFile('equipos.json', (err, data) => {
@@ -25,7 +25,7 @@ app.get('/resultados', (req, res) => {
         res.render('puntajes', { dataCard: dataParsed.equipos});
     });
      
-})
+});
 
 // Hacer que la app escuche el puerto 3000
 app.listen('3000', () => {
