@@ -19,10 +19,10 @@ app.get('/puntajes', (req, res) => {
     // });
 
     // Obtener datos del archivo JSON
-    fs.readFile('equipos.json', (err, data) => {
+    fs.readFile('carrera.json', (err, data) => {
         let dataParsed = JSON.parse(data);
         console.log(dataParsed);
-        res.render('puntajes', { dataCard: dataParsed.equipos});
+        res.render('puntajes', { dataCarrera: dataParsed.carrera});
     });
      
 });
