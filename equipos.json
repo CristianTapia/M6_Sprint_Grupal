@@ -2,161 +2,53 @@
   "equipos": [
     {
       "escuderia": "Alfa Romeo",
-      "piloto1": {
-        "nombre": "Valtteri Bottas",
-        "minutos_totales": 126,
-        "ubicacion_cierre": "Curva 8",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Guanyu Zhou",
-        "minutos_totales": 132,
-        "ubicacion_cierre": "Recta principal",
-        "abandono": true,
-        "motivo_abandono": "problemas técnicos"
-      }
+      "piloto1": "Valtteri Bottas",
+      "piloto2": "Guanyu Zhou"
     },
     {
       "escuderia": "Alpine",
-      "piloto1": {
-        "nombre": "Esteban Ocon",
-        "minutos_totales": 119,
-        "ubicacion_cierre": "Curva 5",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Pierre Gasly",
-        "minutos_totales": 137,
-        "ubicacion_cierre": "Curva 13",
-        "abandono": false
-      }
+      "piloto1": "Esteban Ocon",
+      "piloto2": "Pierre Gasly"
     },
     {
       "escuderia": "Alpha Tauri",
-      "piloto1": {
-        "nombre": "Nyck de Vries",
-        "minutos_totales": 123,
-        "ubicacion_cierre": "Curva 11",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Yuki Tsunoda",
-        "minutos_totales": 142,
-        "ubicacion_cierre": "Curva 19",
-        "abandono": true,
-        "motivo_abandono": "problemas personales"
-      }
+      "piloto1": "Nyck de Vries",
+      "piloto2": "Yuki Tsunoda"
     },
     {
       "escuderia": "Aston Martin",
-      "piloto1": {
-        "nombre": "Lance Stroll",
-        "minutos_totales": 117,
-        "ubicacion_cierre": "Recta principal",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Fernando Alonso",
-        "minutos_totales": 130,
-        "ubicacion_cierre": "Curva 10",
-        "abandono": false
-      }
+      "piloto1": "Lance Stroll",
+      "piloto2": "Fernando Alonso"
     },
     {
       "escuderia": "Ferrari",
-      "piloto1": {
-        "nombre": "Charles Leclerc",
-        "minutos_totales": 114,
-        "ubicacion_cierre": "Curva 3",
-        "abandono": true,
-        "motivo_abandono": "problemas técnicos"
-      },
-      "piloto2": {
-        "nombre": "Carlos Sainz",
-        "minutos_totales": 133,
-        "ubicacion_cierre": "Curva 15",
-        "abandono": false
-      }
+      "piloto1": "Charles Leclerc",
+      "piloto2": "Carlos Sainz"
     },
     {
       "escuderia": "Haas",
-      "piloto1": {
-        "nombre": "Kevin Magnussen",
-        "minutos_totales": 127,
-        "ubicacion_cierre": "Vuelta 30, curva 6",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Nico Hulkenberg",
-        "minutos_totales": 135,
-        "ubicacion_cierre": "Vuelta 43, recta principal",
-        "abandono": true,
-        "motivo_abandono": "Problemas técnicos"
-      }
+      "piloto1": "Kevin Magnussen",
+      "piloto2": "Nico Hulkenberg"
     },
     {
       "escuderia": "McLaren",
-      "piloto1": {
-        "nombre": "Lando Norris",
-        "minutos_totales": 118,
-        "ubicacion_cierre": "Vuelta 27, curva 4",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Oscar Piastri",
-        "minutos_totales": 141,
-        "ubicacion_cierre": "Vuelta 47, curva 8",
-        "abandono": true,
-        "motivo_abandono": "Problemas personales"
-      }
+      "piloto1": "Lando Norris",
+      "piloto2": "Oscar Piastri"
     },
     {
       "escuderia": "Mercedes",
-      "piloto1": {
-        "nombre": "Lewis Hamilton",
-        "minutos_totales": 110,
-        "ubicacion_cierre": "Vuelta 23, recta principal",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "George Russell",
-        "minutos_totales": 143,
-        "ubicacion_cierre": "Vuelta 50, curva 10",
-        "abandono": true,
-        "motivo_abandono": "Problemas técnicos"
-      }
+      "piloto1": "Lewis Hamilton",
+      "piloto2": "George Russell"
     },
     {
       "escuderia": "Red Bull",
-      "piloto1": {
-        "nombre": "Max Verstappen",
-        "minutos_totales": 115,
-        "ubicacion_cierre": "Vuelta 25, curva 2",
-        "abandono": false
-      },
-      "piloto2": {
-        "nombre": "Checo Pérez",
-        "minutos_totales": 139,
-        "ubicacion_cierre": "Vuelta 46, curva 7",
-        "abandono": false
-      }
+      "piloto1": "Max Verstappen",
+      "piloto2": "Checo Pérez"
     },
     {
       "escuderia": "Williams",
-      "piloto1": {
-        "nombre": "Alex Albon",
-        "minutos_totales": 122,
-        "ubicacion_cierre": "Vuelta 31, curva 5",
-        "abandono": true,
-        "motivo_abandono": "Problemas técnicos"
-      },
-      "piloto2": {
-        "nombre": "Logan Sargeant",
-        "minutos_totales": 144,
-        "ubicacion_cierre": "Vuelta 49, recta principal",
-        "abandono": true,
-        "motivo_abandono": "Problemas técnicos"
-      }
+      "piloto1": "Alex Albon",
+      "piloto2": "Logan Sargeant"
     }
   ]
 }

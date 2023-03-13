@@ -1,0 +1,46 @@
+<div class="container mt-3 p-5">
+  <div class="mb-5">
+    <h1>Formulario de carreras</h1>
+  </div>
+  <div class="mb-4">
+    <label for="select"><b>Selección de piloto</b></label>
+    <select id="selec-piloto" class="form-select mt-2" aria-label="select">
+        <option selected disabled>Seleccionar piloto</option>
+        {{#each dataEquipos}}
+        <option>{{this.piloto1}}</option>
+        <option>{{this.piloto2}}</option>
+        {{/each}}
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="minutos" class="form-label"><b>Minutos totales de reccorido</b></label>
+    <input type="number" class="form-control" id="minutos"/>
+  </div>
+
+  <div class="mb-4">
+    <label for="ubicacion" class="form-label"><b>Ubicación de cierre</b></label>
+    <input class="form-control" id="ubicacion"/>
+  </div>
+
+  <div class="mb-3">
+        <label for="si" class="form-label"><b>Estado del piloto</b></label><br>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="activo">
+        <label class="form-check-label" for="activo">
+            Activo
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="abandono">
+        <label class="form-check-label mb-4" for="abandono">
+            Abandono
+        </label><br>
+        <div id="motivo">
+            <label for="motivo" class="form-label">Motivo</label>
+            <input class="form-control" id="motivo"/>
+        </div>
+        </div>
+  </div>
+
+  <button id="enviar" type="button" class="btn btn-primary">Enviar</button>
