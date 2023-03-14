@@ -6,7 +6,7 @@ let ubicacion = document.getElementById('ubicacion');
 let motivo = document.getElementById('motivo-txt');
 let btn = document.getElementById('enviar');
 let estado = document.getElementById('sel-estado-piloto');
-let puntaje = document.getElementById('puntaje-piloto')
+let puntaje = document.getElementById('puntaje-piloto');
 $("#motivo").hide();
 estado.addEventListener("change", () => {
   let optionSelected = estado.value;
@@ -19,19 +19,26 @@ estado.addEventListener("change", () => {
 });
 
 // Llenar array con objetos que contienen la informacion de los pilotos
-let contador = 0;
-// let pilotosArray = [];
+// let contador = 0;
+let pilotos = [];
+let xhr = new XMLHttpRequest();
 
-var pilotostest = {
-    pilotosArray: []
-};
 
 btn.addEventListener('click', () => {
-    contador++;
-    let data = new Datos(piloto.value, minutos.value, ubicacion.value, estado.value, motivo.value, parseInt(puntaje.value));
-    // pilotos.push(data);
-    console.log(pilotosArray);
+  // contador++;
+  let data = new Datos(piloto.value, minutos.value, ubicacion.value, estado.value, motivo.value, parseInt(puntaje.value));
+  
+  pilotos.push(data);
 
-    pilotostest.pilotosArray.push(data);
+  console.log(pilotos)
+  const json = JSON.stringify(pilotos);
+  console.log(json)
+
+  xhr.open("POST", "/data");
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhr.send(JSON.stringify(pilotos));
+  // console.log(JSON.stringify(data))
 });
 
+
+  

@@ -3,9 +3,11 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 // Crear servidor express
 const app = express();
+const puerto = '3000';
 
 // Permitir archivos estaticos
 app.use(express.static('public'))
@@ -32,16 +34,38 @@ app.get('/resultados', (req, res) => {
 });
 
 app.get('/puntajes', (req, res) => {
-    res.render('puntajes', { dataCarrera: data['carrera.json'].carrera});
+    res.render('puntajes', { dataPiloto: data['pilotos.json']});
 });
 
 app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.use(bodyParser.json());
+
+app.post('/data', (req, res) => {
+  let datosRecibidos = req.body;
+//   console.log(datosRecibidos);
+  let jsonString = JSON.stringify(datosRecibidos);
+  res.send("Data received!");
+  console.log(jsonString)
+
+// fs.appendFile('pilotos.json', jsonString, (err) => {
+//     if (err) throw err;
+//     console.log('Contenido ingresado');
+//   });
+
+  fs.writeFile('pilotos.json', jsonString, (err) => {
+    if (err) throw err;
+    console.log('Guardado');
+  });
+});
+
+
+
 // Hacer que la app escuche el puerto 3000
-app.listen('3000', () => {
-    console.log('Servicio levantado')
+app.listen(puerto, () => {
+    console.log('Servicio levantado');
 })
 
 // Insertar mas archivos JSON dentro de una pagina
