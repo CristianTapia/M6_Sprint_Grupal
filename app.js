@@ -34,7 +34,7 @@ app.get('/resultados', (req, res) => {
 });
 
 app.get('/puntajes', (req, res) => {
-    res.render('puntajes', { dataPiloto: data['pilotos.json']});
+    res.render('puntajes', { dataCarrera: data['carrera.json'].carrera});
 });
 
 app.get('/', (req, res) => {
