@@ -2,6 +2,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const path = require('path');
 
 // Crear servidor express
 const app = express();
@@ -23,7 +24,7 @@ archivos.forEach(archivo => {
   const rawData = fs.readFileSync(archivo);
   const jsonData = JSON.parse(rawData);
   data[archivo] = jsonData;
-  console.log(data[archivo])
+//   console.log(data[archivo])
 });
 
 app.get('/resultados', (req, res) => {
@@ -32,6 +33,10 @@ app.get('/resultados', (req, res) => {
 
 app.get('/puntajes', (req, res) => {
     res.render('puntajes', { dataCarrera: data['carrera.json'].carrera});
+});
+
+app.get('/', (req, res) => {
+    res.render('index');
 });
 
 // Hacer que la app escuche el puerto 3000
