@@ -1,46 +1,57 @@
-<div class="container mt-3 p-5">
-  <div class="mb-5">
-    <h1>Formulario de carreras</h1>
-  </div>
-  <div class="mb-4">
-    <label for="select"><b>Selección de piloto</b></label>
-    <select id="selec-piloto" class="form-select mt-2" aria-label="select">
+<form>
+  <div class="container mt-3 p-5">
+    <div class="mb-5">
+      <h1>Formulario de carreras</h1>
+    </div>
+    <div class="mb-4">
+      <label for="select"><b>Selección de piloto</b></label>
+      <select id="selec-piloto" class="form-select mt-2" aria-label="select">
         <option selected disabled>Seleccionar piloto</option>
         {{#each dataEquipos}}
-        <option>{{this.piloto1}}</option>
-        <option>{{this.piloto2}}</option>
+          <option>{{this.piloto1}}</option>
+          <option>{{this.piloto2}}</option>
         {{/each}}
-    </select>
-  </div>
+      </select>
+    </div>
 
-  <div class="mb-4">
-    <label for="minutos" class="form-label"><b>Minutos totales de reccorido</b></label>
-    <input type="number" class="form-control" id="minutos"/>
-  </div>
+    <div class="mb-4">
+      <label for="minutos" class="form-label"><b>Minutos totales de recorrido</b></label>
+      <input type="number" class="form-control" id="minutos"/>
+    </div>
 
-  <div class="mb-4">
-    <label for="ubicacion" class="form-label"><b>Ubicación de cierre</b></label>
-    <input class="form-control" id="ubicacion"/>
-  </div>
+    <div class="mb-4">
+      <label for="ubicacion" class="form-label"><b>Ubicación de cierre</b></label>
+      <input class="form-control" id="ubicacion"/>
+    </div>
 
-  <div class="mb-3">
-        <label for="si" class="form-label"><b>Estado del piloto</b></label><br>
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="activo">
-        <label class="form-check-label" for="activo">
-            Activo
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="abandono">
-        <label class="form-check-label mb-4" for="abandono">
-            Abandono
-        </label><br>
-        <div id="motivo">
-            <label for="motivo" class="form-label">Motivo</label>
-            <input class="form-control" id="motivo"/>
-        </div>
-        </div>
+    <div class="mb-4">
+      <label for="select"><b>Estado del piloto</b></label>
+      <select id="sel-estado-piloto" class="form-select mt-2" aria-label="select">
+        <option selected disabled>Seleccionar estado del piloto</option>
+        <option>Activo</option>
+        <option>Abandono</option>
+      </select>
+    </div>
+    <div id="motivo" class="mb-4">
+      <label for="motivo-txt" class="form-label"><b>Motivo</b></label>
+      <input id="motivo-txt" class="form-control"/>
+    </div>
+    <div class="mb-4">
+      <label for="select"><b>Puntaje</b></label>
+      <select id="puntaje-piloto" class="form-select mt-2" aria-label="select">
+        <option selected disabled>Seleccionar puntaje del piloto</option>
+        <option>25</option>
+        <option>18</option>
+        <option>15</option>
+        <option>12</option>
+        <option>10</option>
+        <option>8</option>
+        <option>6</option>
+        <option>4</option>
+        <option>2</option>
+        <option>1</option>
+      </select>
+    </div>
+    <button id="enviar" type="button" class="btn btn-primary">Enviar</button>
   </div>
-
-  <button id="enviar" type="button" class="btn btn-primary">Enviar</button>
+</form>
