@@ -30,7 +30,11 @@ archivos.forEach(archivo => {
 });
 
 app.get('/resultados', (req, res) => {
-    res.render('resultados', { dataEquipos: data['equipos.json'].equipos });
+    res.render('resultados', { dataEquipos: data['equipos.json'].equipos, dataCarrera: data['carrera.json'].carrera });
+});
+
+app.get('/abandonos', (req, res) => {
+    res.render('abandonos', { dataEquipos: data['equipos.json'].equipos, dataCarrera: data['carrera.json'].carrera });
 });
 
 app.get('/puntajes', (req, res) => {

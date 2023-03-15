@@ -19,25 +19,19 @@ estado.addEventListener("change", () => {
 });
 
 // Llenar array con objetos que contienen la informacion de los pilotos
-// let contador = 0;
 let pilotos = [];
 let xhr = new XMLHttpRequest();
 
 
 btn.addEventListener('click', () => {
-  // contador++;
   let data = new Datos(piloto.value, minutos.value, ubicacion.value, estado.value, motivo.value, parseInt(puntaje.value));
-  
   pilotos.push(data);
-
   console.log(pilotos)
   const json = JSON.stringify(pilotos);
   console.log(json)
-
   xhr.open("POST", "/data");
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhr.send(JSON.stringify(pilotos));
-  // console.log(JSON.stringify(data))
 });
 
 

@@ -3,8 +3,19 @@
     <div class="mb-5">
       <h1>Formulario de carreras</h1>
     </div>
+
     <div class="mb-4">
-      <label for="select"><b>Selección de piloto</b></label>
+      <label for="select"><b>Circuito</b></label>
+      <select id="selec-piloto" class="form-select mt-2" aria-label="select">
+        <option selected disabled>Seleccionar circuito</option>
+        {{#each dataCarrera}}
+          <option>{{this.circuito}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label for="select"><b>Piloto</b></label>
       <select id="selec-piloto" class="form-select mt-2" aria-label="select">
         <option selected disabled>Seleccionar piloto</option>
         {{#each dataEquipos}}
@@ -52,6 +63,7 @@
         <option>1</option>
       </select>
     </div>
-    <button id="enviar" type="button" class="btn btn-primary">Enviar</button>
+    <a id="enviar" class="btn btn-primary" role="button" aria-disabled="true">Enviar</a>
+    <a id="estadisticas" class="btn btn-link" role="button" aria-disabled="true" href="./abandonos">Estadísticas</a>
   </div>
 </form>
