@@ -3,27 +3,26 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const path = require('path');
-// const bodyParser = require('body-parser');
 
 // Crear servidor express
 const app = express();
 const puerto = 3000;
 
 // Permitir archivos estaticos
-app.use(express.static('public'))
+app.use(express.static('public'));
+// Analisis archivos json
+app.use(express.json());
 
 // Configurar el servidor para usar el motor hbs
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
-app.use(express.json());
-
 app.post('/abandonos', (req, res) => {
     let datosRecibidos = req.body;
   //   console.log(datosRecibidos);
     let jsonString = JSON.stringify(datosRecibidos);
-    res.send("Data received!");
-    console.log(jsonString)
+    res.send("Datos recibidos");
+    console.log(jsonString);
   
   // fs.appendFile('pilotos.json', jsonString, (err) => {
   //     if (err) throw err;
@@ -32,7 +31,7 @@ app.post('/abandonos', (req, res) => {
   
     fs.writeFile('pilotos.json', jsonString, (err) => {
       if (err) throw err;
-      console.log('Guardado');
+      console.log('Archivo guardado');
     });
   });
 
@@ -65,14 +64,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-
-
-
-
 // Hacer que la app escuche el puerto 3000
 app.listen(puerto, () => {
     console.log('Servicio levantado');
-})
+});
 
 // Insertar mas archivos JSON dentro de una pagina
     // const data1 = require('./data1.json');
