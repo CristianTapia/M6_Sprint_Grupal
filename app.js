@@ -3,11 +3,11 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const path = require('path');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 // Crear servidor express
 const app = express();
-const puerto = '3000';
+const puerto = 3000;
 
 // Permitir archivos estaticos
 app.use(express.static('public'))
@@ -16,8 +16,28 @@ app.use(express.static('public'))
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
+app.use(express.json());
+
+app.post('/abandonos', (req, res) => {
+    let datosRecibidos = req.body;
+  //   console.log(datosRecibidos);
+    let jsonString = JSON.stringify(datosRecibidos);
+    res.send("Data received!");
+    console.log(jsonString)
+  
+  // fs.appendFile('pilotos.json', jsonString, (err) => {
+  //     if (err) throw err;
+  //     console.log('Contenido ingresado');
+  //   });
+  
+    fs.writeFile('pilotos.json', jsonString, (err) => {
+      if (err) throw err;
+      console.log('Guardado');
+    });
+  });
+
 // Almacenar datos de archivos JSON
-const archivos = ['carrera.json', 'equipos.json'];
+const archivos = ['carrera.json', 'equipos.json', 'pilotos.json'];
 
 const data = {};
 
@@ -34,7 +54,7 @@ app.get('/resultados', (req, res) => {
 });
 
 app.get('/abandonos', (req, res) => {
-    res.render('abandonos', { dataEquipos: data['equipos.json'].equipos, dataCarrera: data['carrera.json'].carrera });
+    res.render('abandonos', { dataPilotos: data['pilotos.json'].infoPilotos, dataEquipos: data['equipos.json'].equipos });
 });
 
 app.get('/puntajes', (req, res) => {
@@ -45,25 +65,7 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.use(bodyParser.json());
 
-app.post('/data', (req, res) => {
-  let datosRecibidos = req.body;
-//   console.log(datosRecibidos);
-  let jsonString = JSON.stringify(datosRecibidos);
-  res.send("Data received!");
-  console.log(jsonString)
-
-// fs.appendFile('pilotos.json', jsonString, (err) => {
-//     if (err) throw err;
-//     console.log('Contenido ingresado');
-//   });
-
-  fs.writeFile('pilotos.json', jsonString, (err) => {
-    if (err) throw err;
-    console.log('Guardado');
-  });
-});
 
 
 
