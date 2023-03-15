@@ -1,0 +1,22 @@
+<h5>Ranking</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Escudería</th>
+      <th scope="col">Puntos</th>
+      <th scope="col">Ranking</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each datos}}
+                        
+                        <tr>
+                            <th scope="row">{{escuderia}}</th>
+                            <td>{{puntos}}</td>
+                            <td>{{ranking}}</td>
+    <tr>
+      {{/each}}
+  </tbody>
+</table>
+
