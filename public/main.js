@@ -33,7 +33,8 @@ btn.addEventListener('click', () => {
   let data = new Datos(circuito.value, piloto.value, minutos.value, ubicacion.value, estado.value, motivo.value, parseInt(puntaje.value));
   pilotosJSON.infoPilotos.push(data);
   console.log(pilotosJSON);
-  const json = JSON.stringify(pilotosJSON);
+  // const json = JSON.stringify(pilotosJSON);
+
 
   // AJAX para enviar la informacion
 

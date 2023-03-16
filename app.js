@@ -60,6 +60,10 @@ app.get('/puntajes', (req, res) => {
     res.render('puntajes', { dataCarrera: data['carrera.json'].carrera});
 });
 
+app.get('/ranking', (req, res) => {
+    res.render('ranking-equipos', { dataEquipos: data['equipos.json'].equipos, dataPilotos: data['pilotos.json'].infoPilotos});
+});
+
 app.get('/', (req, res) => {
     res.render('index');
 });
